@@ -43,28 +43,47 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 | temp        | temp in degrees         |
 | visibility  | daylight period         |
 | weather     | weather conditions      |
-| trnspd           | int
-| typspd.        | object
-| trnbbr | object
-| trndir | float
-| tons | int
-| typeq | object
-| trkname | object
-| typtrk | int
-| headend1 | int
-| loadf1 | int 
-| loadp1| int
-| emptyf1 | int
-| emptyp1 | int 
-| eqpdmg | int 
-| trkdmg | int 
-| cause | object
-| caskldrr | int 
-| casinjrr | int
+| trnspd      | speed of thrain in mph  | int
+| typspd      | train speed type        | object
+| trnnbr      | train id number         | object
+| trndir      | train direction         | float
+| tons        | gross tonnage           | int
+| typeq       | type of equipment.      | object
+| trkname     | track identification    | object
+| typtrk      | Type of track.          | int
+| headend1    | # headend locomotives   | int
+| loadf1      | # loaded freight cars   | int 
+| loadp1      | # loaded passenger cars | int
+| emptyf1     | # empty freight cars    | int
+| emptyp1     | # empty passenger cars  | int 
+| eqpdmg      | equipment damage is USD | int 
+| trkdmg      | track damage in USD     | int 
+| cause       | cause of incidence      | object
+| caskldrr    | # killed                | int 
+| casinjrr    | # injured               | int
 | caskld | int
 | casinj | int
 | highspd | int
-| 
+| accdmg | int
+| stcnty | object
+| totinj | int
+| totkld | int
+| engrs | float
+| firemen | float
+| conductr | float
+| brakemen | float
+| region | int
+| typrr | object
+| narrlen | int
+| rreempkld | int
+| rrempinj | int
+| passkld | int
+| passinj | int
+| otherkld | int
+| otherinj | int 
+| county | object
+| cntycd | float
+
 
 
 
