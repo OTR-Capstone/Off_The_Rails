@@ -111,3 +111,25 @@ def general_equip_clean(df):
     df.columns= df.columns.str.lower()
 
     return df
+
+
+def prep_equip_df(df):
+    '''
+    This function takes in the equipment rail data frame
+    and applies the prepare and cleaning functions to it so that it is ready
+    for analysis.
+
+    It returns a single dataframe
+    '''
+
+    #Reduce columns
+    df = reduce_equip_cols(df)
+
+    #Deal with date time columsn
+    df = concat_date_time(df)
+
+    #general cleaning
+    df = general_equip_clean(df)
+
+
+    return df
