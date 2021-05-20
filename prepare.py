@@ -63,7 +63,9 @@ def reduce_equip_cols(df):
 
     It returns a single dataframe
     '''
-
+    #Define threshold
+    threshold = len(df) * 0.80
+    
     #Drop cols with 80% or more missing values
     df = df.dropna(axis=1, thresh=threshold)
 
