@@ -76,3 +76,21 @@ def reduce_equip_cols(df):
             'OTHERKLD','OTHERINJ','COUNTY','CNTYCD','PASSTRN','SSB1','NARR1','NARR2','Latitude','Longitud','SIGNAL']]
 
     return df
+
+    def concat_date_time(df):
+        '''
+        This function takes in the equip rail data frame and:
+        - Concatenates the date time values as a datetime object
+        - Drops the original columns for date and time
+        
+        It returns a single dataframe
+    
+        '''
+    
+        #Concatenate datetime columns
+        df['date'] = pd.to_datetime(df.MONTH.astype(str)+' '+df.DAY.astype(str)+' '+df.YEAR.astype(str)+' '+df.TIMEHR.astype(str)+':'+df.TIMEMIN.astype(str)+' '+df.AMPM.astype(str))
+    
+        #Drop original date time columns
+        df.drop(columns={'YEAR', 'MONTH', 'DAY', 'TIMEHR', 'TIMEMIN', 'AMPM'}, inplace=True)
+    
+        return df
