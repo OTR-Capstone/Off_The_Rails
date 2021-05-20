@@ -9,3 +9,52 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 **Data Source:** U.S. Department of Transportation 
 ****
 
+### Goals:
+* 
+
+
+**** 
+
+### Deliverables:
+* 
+**** 
+
+### Data Dictionary
+
+| Features | Description | Data Type |
+|---------|-------------|-----------|
+|  |  |  |
+
+
+\* - Indicates the target feature in this data
+***
+
+
+### Data Science Pipeline:
+
+#### 1. Acquire
+
+#### 2. Prepare
+
+#### 3. Explore
+
+#### 4. Model/Evaluate
+
+#### 5. Deliver
+
+
+### Conclusion:
+
+
+### Next Steps: 
+
+
+****
+
+### Instructions for Reproducing Project:  
+
+1.  Read and follow this README.md. 
+
+2.  Download the following files to your working directory:  
+
+3.  Run our final Jupyter Notebook to reproduce our findings and analysis. 
