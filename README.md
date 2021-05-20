@@ -33,9 +33,14 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 
 ### Data Dictionary
 
-| Features | Description | Data Type |
-|---------|-------------|-----------|
-|  |  |  |
+| Features    | Description             | Data Type |
+|-------------|-------------------------|-----------|
+| iyr         | year of incident        |
+| imo         | month of incident       |
+| state       | FIPS state code
+| temp        | temp in degrees
+| visibility  | daylight period
+| weather     | weather conditions
 
 
 \* - Indicates the target feature in this data
