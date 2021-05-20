@@ -10,17 +10,26 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 ****
 
 ### Project Goals:
+
 - Determine which features are drivers of highway rail accidents and equipment rail accidents.
-- Build a classification model for predicting which Railroad operator is most likely to be involved with a given accident.
-- Showcase highlighted findings in a presentation with in-depth findings, analysis, and process well documented in a final, reproduciable report.
-
-
+- Build a classification model for predicting which Railroad operator is most likely to be involved with a given accident. This information is used to enhance the overall analysis.
 
 **** 
 
 ### Deliverables:
-* 
+- Showcase highlighted findings in a presentation delivered to stakeholders. 
+- Create a reproducible jupyter notebook report that includes process, takeaways, and discoveries from every stage of the pipeline. 
 **** 
+
+### Initial Hypotheses:
+
+- For each type of rail incidents, Railroad Operator plays into the frequency of incidents and the severity of incidents. 
+- Geography and location has an impact on the type of rail incident.
+- Time of year and weather conditions have an impact on the frequency and scale of a rail accident.
+- There will be a difference in severity of accident based on whether the accident was a highway rail accident or an equipment accident.
+
+
+****
 
 ### Data Dictionary
 
@@ -36,14 +45,25 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 ### Data Science Pipeline:
 
 #### 1. Acquire
+- The data is acquired from csv files sourced from the US Department of Transportation.
+- Two datframes are created by concatenting the csv files for highway rail accidents and equipment rail accidents. 
 
 #### 2. Prepare
+- Prepare the data for analysis with two prepare modules, one for each type of rail incident (highway  and equipment)
+- The prepare modules will return respective dataframes, split into train, validate and test. The train dataset will be ready for explorary analysis. 
 
-#### 3. Explore
+#### 3. Explore & Preprocessing
+- Exploration is reprodible and takeaways are well documented.
+- Preprocessing module prepares the dataframes for modeling.
 
 #### 4. Model/Evaluate
+- Develop a baseline model for predicting the railroad operator based on the type of indcident and incident features
+- Build classification models that improve upon the baseline accuracy with the understanding that model performance and evaluation metrics will better inform the overall analysis. 
 
 #### 5. Deliver
+- A deployed model that can take in new data that is preprocessed and returns similar results. This is important for supporting any analysis and takeaways that were concluded from the modeling stage. 
+- A report with visuals that highlight the findings from the project analysis
+- A reproducible notebook that is well-documented
 
 
 ### Conclusion:
