@@ -52,3 +52,25 @@ def missing_zero_values_table(df):
 #         mz_table.to_excel('D:/sampledata/missing_and_zero_values.xlsx', freeze_panes=(1,0), index = False)
 
     return mz_table
+
+
+def reduce_equip_cols(df):
+    '''
+    This function takes in the equipemnet rail data frame and drops collumns:
+        - With 80% of null values
+        - Features not inlcuded in this analyis
+        - Duplicated information columns
+
+    It returns a single dataframe
+    '''
+
+    #Drop cols with 80% or more missing values
+    df = df.dropna(axis=1, thresh=threshold)
+
+    df = df[['IYR','IMO','RAILROAD','YEAR','MONTH','DAY','TIMEHR','TIMEMIN','AMPM','TYPE','STATE','TEMP','VISIBLTY','WEATHER',
+            'TRNSPD','TYPSPD','TRNNBR','TRNDIR','TONS','TYPEQ','TRKNAME','TYPTRK','HEADEND1','LOADF1','LOADP1','EMPTYF1',
+            'EMPTYP1','EQPDMG','TRKDMG','CAUSE','CASKLDRR','CASINJRR','CASKLD','CASINJ','HIGHSPD','ACCDMG','STCNTY','TOTINJ',
+            'TOTKLD','ENGRS','FIREMEN','CONDUCTR','BRAKEMEN','REGION','TYPRR','NARRLEN','RREMPKLD','RREMPINJ','PASSKLD','PASSINJ',
+            'OTHERKLD','OTHERINJ','COUNTY','CNTYCD','PASSTRN','SSB1','NARR1','NARR2','Latitude','Longitud','SIGNAL']]
+
+    return df
