@@ -33,14 +33,39 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 
 ### Data Dictionary
 
+
 | Features    | Description             | Data Type |
 |-------------|-------------------------|-----------|
-| iyr         | year of incident        |
+| iyr         | year of incident        | 
 | imo         | month of incident       |
+| railroad    | 
 | state       | FIPS state code         |
 | temp        | temp in degrees         |
 | visibility  | daylight period         |
 | weather     | weather conditions      |
+| trnspd           | int
+| typspd.        | object
+| trnbbr | object
+| trndir | float
+| tons | int
+| typeq | object
+| trkname | object
+| typtrk | int
+| headend1 | int
+| loadf1 | int 
+| loadp1| int
+| emptyf1 | int
+| emptyp1 | int 
+| eqpdmg | int 
+| trkdmg | int 
+| cause | object
+| caskldrr | int 
+| casinjrr | int
+| caskld | int
+| casinj | int
+| highspd | int
+| 
+
 
 
 \* - Indicates the target feature in this data
