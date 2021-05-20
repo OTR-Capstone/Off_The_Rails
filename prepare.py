@@ -2,6 +2,7 @@
 import pandas as pd
 import numpy as np
 import os
+from env import sys
 
 
 
@@ -70,27 +71,43 @@ def reduce_equip_cols(df):
     df = df.dropna(axis=1, thresh=threshold)
 
     df = df[['IYR','IMO','RAILROAD','YEAR','MONTH','DAY','TIMEHR','TIMEMIN','AMPM','TYPE','STATE','TEMP','VISIBLTY','WEATHER',
-            'TRNSPD','TYPSPD','TRNNBR','TRNDIR','TONS','TYPEQ','TRKNAME','TYPTRK','HEADEND1','LOADF1','LOADP1','EMPTYF1',
-            'EMPTYP1','EQPDMG','TRKDMG','CAUSE','CASKLDRR','CASINJRR','CASKLD','CASINJ','HIGHSPD','ACCDMG','STCNTY','TOTINJ',
+            'TRNSPD','TYPSPD','TRNDIR','TONS','TYPEQ','TYPTRK','HEADEND1','LOADF1','LOADP1','EMPTYF1',
+            'EMPTYP1','EQPDMG','TRKDMG','CAUSE','CASKLDRR','CASINJRR','CASKLD','CASINJ','HIGHSPD','ACCDMG','TOTINJ',
             'TOTKLD','ENGRS','FIREMEN','CONDUCTR','BRAKEMEN','REGION','TYPRR','NARRLEN','RREMPKLD','RREMPINJ','PASSKLD','PASSINJ',
-            'OTHERKLD','OTHERINJ','COUNTY','CNTYCD','PASSTRN','SSB1','NARR1','NARR2','Latitude','Longitud','SIGNAL']]
+            'OTHERKLD','OTHERINJ','COUNTY','CNTYCD','PASSTRN','NARR1','NARR2','Latitude','Longitud','SIGNAL']]
 
     return df
 
-    def concat_date_time(df):
-        '''
-        This function takes in the equip rail data frame and:
-        - Concatenates the date time values as a datetime object
-        - Drops the original columns for date and time
+def concat_date_time(df):
+    '''
+    This function takes in the equip rail data frame and:
+    - Concatenates the date time values as a datetime object
+    - Drops the original columns for date and time
         
-        It returns a single dataframe
+    It returns a single dataframe
     
-        '''
+    '''
     
-        #Concatenate datetime columns
-        df['date'] = pd.to_datetime(df.MONTH.astype(str)+' '+df.DAY.astype(str)+' '+df.YEAR.astype(str)+' '+df.TIMEHR.astype(str)+':'+df.TIMEMIN.astype(str)+' '+df.AMPM.astype(str))
+    #Concatenate datetime columns
+    df['date'] = pd.to_datetime(df.MONTH.astype(str)+' '+df.DAY.astype(str)+' '+df.YEAR.astype(str)+' '+df.TIMEHR.astype(str)+':'+df.TIMEMIN.astype(str)+' '+df.AMPM.astype(str))
     
-        #Drop original date time columns
-        df.drop(columns={'YEAR', 'MONTH', 'DAY', 'TIMEHR', 'TIMEMIN', 'AMPM'}, inplace=True)
+    #Drop original date time columns
+    df.drop(columns={'YEAR', 'MONTH', 'DAY', 'TIMEHR', 'TIMEMIN', 'AMPM'}, inplace=True)
     
-        return df
+    return df
+
+
+def general_equip_clean(df):
+    '''
+    This function takes in the equip df and prepares it for analysis by:
+        - lowercasing all column titles
+        -
+        -
+
+    It returns a single dataframe
+        
+    '''
+    #lowecase all column titles
+    df.columns= df.columns.str.lower()
+
+    return df
