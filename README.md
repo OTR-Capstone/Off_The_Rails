@@ -9,8 +9,11 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 **Data Source:** U.S. Department of Transportation 
 ****
 
-### Goals:
-* 
+### Project Goals:
+- Determine which features are drivers of highway rail accidents and equipment rail accidents.
+- Build a classification model for predicting which Railroad operator is most likely to be involved with a given accident.
+- Showcase highlighted findings in a presentation with in-depth findings, analysis, and process well documented in a final, reproduciable report.
+
 
 
 **** 
