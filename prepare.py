@@ -1,8 +1,9 @@
 
+
 import pandas as pd
 import numpy as np
 import os
-from env import sys
+import sys
 
 
 # Miscellaneous Prep Functions~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -197,8 +198,6 @@ def rename_columns(df):
                    'equip_damage',
                    'track_damage', 
                    'cause',
-                   'caskldrr',
-                   'casinjrr', 
                    'total_killed', 
                    'total_injured', 
                    'max_speed', 
@@ -208,15 +207,12 @@ def rename_columns(df):
                    'brakemen_onduty', 
                    'region', 
                    'typrr', 
-                   'rremp_killed',
-                   'rremp_injured',
-                   'passengers_killed',
-                   'passengers_injured',
-                   'passtrn', 
                    'lat', 
                    'long', 
                    'signal_type',
                    'date']
+    
+    return df
 
 
 def prep_equip_df(df):
