@@ -33,57 +33,42 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 
 ### Data Dictionary
 
+\* Equipment Data
 
-| Features    | Description                   | Data Type |
-|-------------|-------------------------------|-----------|
-| iyr         | year of incident              | int       |
-| imo         | month of incident             | int       |
-| railroad    | railroad code                 | object    |
-| state       | FIPS state code               | int       |
-| temp        | temp in degrees               | int       |
-| visibility  | daylight period               | int       |
-| weather     | weather conditions            | int       |
-| trnspd      | speed of train in mph         | int       |
-| typspd      | train speed type              | object    |
-| trnnbr      | train id number               | object    |
-| trndir      | train direction               | float     |
-| tons        | gross tonnage                 | int       |
-| typeq       | type of equipment             | object    |
-| trkname     | track identification          | object    |
-| typtrk      | Type of track.                | int       |
-| headend1    | # headend locomotives         | int       |
-| loadf1      | # loaded freight cars         | int       |
-| loadp1      | # loaded passenger cars       | int       |
-| emptyf1     | # empty freight cars          | int       |
-| emptyp1     | # empty passenger cars        | int       | 
-| eqpdmg      | equipment damage is USD       | int       |
-| trkdmg      | track damage in USD           | int       |
-| cause       | cause of incidence            | object    |
-| caskldrr    | # killed                      | int       | 
-| casinjrr    | # injured                     | int       |
-| caskld      | total killed for all rr       | int       |
-| casinj      | total injured for all rr      | int       |
-| highspd     | maximum equipment speed       | int       |
-| accdmg      | total damage                  | int       |
-| stcnty      | FIPS state and county         | object    |
-| totinj      | total injured                 | int
-| totkld      | total killed                  | int
-| engrs       | # of engineers on duty        | float
-| firemen     | # of firemen on duty          | float
-| conductr    | # of conductors on duty       | float
-| brakemen    | # of brakemen on duty         | float
-| region      | FRA designated region         | int
-| typrr       | type of railroad              | object
-| rreempkld   | # rr employees killed         | int
-| rrempinj    | # rr employees injured        | int
-| passkld     | # passengeres killed          | int
-| passinj     | # passengers injured          | int
-| otherkld    | # of others killed            | int
-| otherinj    | # of others injured           | int 
-| county      | county name                   | object
-| cntycd      | FIPS county code              | float
-
-
+| Features            | Description                   | Data Type |
+|---------------------|-------------------------------|-----------|
+| railroad_company    | railroad code                 | object    |
+| accident_type       | type of accident              | int       |
+| state               | FIPS state code               | int       |
+| temp                | temp in degrees               | int       |
+| visibility          | daylight period               | int       |
+| weather             | weather conditions            | int       |
+| train_speed         | speed of train in mph         | int       |
+| train_direction     | train direction               | float     |
+| train_weight        | gross tonnage of train        | int       |
+| train_type          | type of equipment             | object    |
+| track_type          | type of track                 | int       |
+| front_engines       | # of head end locomotives     | int       |
+| loadfrght_cars      | # of loaded freight cars      | int       |
+| loadpass_cars       | # of loaded passenger cars    | int       |
+| emptyfrght_cars     | # of empty freight cars       | int       |
+| emptypass_cars      | # of empty passenger cars     | int       | 
+| equip_damage        | equipment damage is USD       | int       |
+| track_damage        | track damage in USD           | int       |
+| cause               | cause of incidence            | object    |
+| total_killed        | # of killed                   | int       | 
+| total_injured       | # of injured                  | int       |
+| max_speed           | maximum equipment speed       | int       |
+| total_damage        | total damage                  | int       |
+| engineers_onduty    | # of engineers on duty        | float     |
+| conductors_onduty   | # of conductors on duty       | float     |
+| brakemen_onduty     | # of brakemen on duty         | float     |
+| region              | FRA designated region         | int       |
+| typrr               | type of railroad              | object    |
+| lat                 | latitude                      | object    |
+| long                | longitude                     | object    |
+| signal_type         | type of signal                | int       |
+| date                | # passengers injured          | datetime  |
 
 
 \* - Indicates the target feature in this data
