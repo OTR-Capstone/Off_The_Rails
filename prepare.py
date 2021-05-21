@@ -5,13 +5,6 @@ import os
 from env import sys
 
 
-
-
-
-
-
-
-
 # Miscellaneous Prep Functions~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ''''''''''''''''''''
@@ -24,10 +17,11 @@ from env import sys
 
 def missing_zero_values_table(df):
     
-    '''This function will look at any data set and report back on zeros and nulls for every column while also giving percentages of total values
-        and also the data types. The message prints out the shape of the data frame and also tells you how many columns have nulls '''
-    
-    
+    '''
+    This function will look at any data set and report back on zeros and nulls for every column 
+    while also giving percentages of total values and also the data types. 
+    The message prints out the shape of the data frame and also tells you how many columns have nulls 
+    '''
     
     zero_val = (df == 0.00).astype(int).sum(axis=0)
     null_count = df.isnull().sum()
@@ -47,6 +41,17 @@ def missing_zero_values_table(df):
 #         mz_table.to_excel('D:/sampledata/missing_and_zero_values.xlsx', freeze_panes=(1,0), index = False)
 
     return mz_table
+
+    
+
+############################################################################################################################
+
+''''''''''''''''''''
+'                  '
+'  Equipment Prep  '
+'    Functions     '
+''''''''''''''''''''
+
 
 
 def min_reduce_equip_cols(df):
@@ -72,6 +77,8 @@ def min_reduce_equip_cols(df):
 
     return df
 
+
+
 def max_reduce_equip_cols(df):
     '''
     This function takes in the equipemnet rail data frame and drops collumns:
@@ -82,7 +89,7 @@ def max_reduce_equip_cols(df):
     It returns a single dataframe
     '''
     #Define threshold
-    threshold = len(df) * 0.80
+    threshold = len(df) * 0.60
     
     #Drop cols with 80% or more missing values
     df = df.dropna(axis=1, thresh=threshold)
@@ -94,6 +101,9 @@ def max_reduce_equip_cols(df):
             'PASSTRN','Latitude','Longitud','SIGNAL']]
 
     return df
+
+
+
 
 def concat_date_time(df):
     '''
@@ -114,6 +124,9 @@ def concat_date_time(df):
     return df
 
 
+
+
+
 def general_equip_clean(df):
     '''
     This function takes in the equip df and prepares it for analysis by:
@@ -131,7 +144,32 @@ def general_equip_clean(df):
     df.latitude = df.latitude.astype(str)
     df.longitud = df.longitud.astype(str)
 
+    #Drop null values
+    #drop null values
+    df = df.dropna(axis=0)
+
     return df
+
+
+
+
+def set_equip_index(df):
+    '''
+    This function takes in the equipment dataframe and sets the index
+    to the unique incident number after first dropping the observations
+    with duplicate incident numbers
+    '''
+
+    #Filters out observations with unique incident numbers 
+    counts = df['incdtno'].value_counts()
+    df = df[~df['incdtno'].isin(counts[counts > 1].index)]
+
+    #set the index
+    df.set_index('incdtno', drop=True, inplace=True)
+
+    return df
+
+
 
 
 def prep_equip_df(df):
@@ -151,6 +189,9 @@ def prep_equip_df(df):
 
     #general cleaning
     df = general_equip_clean(df)
+
+    #set the index
+    df = set_equip_index(df)
 
 
     return df
