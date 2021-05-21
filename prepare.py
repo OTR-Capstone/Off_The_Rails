@@ -87,7 +87,7 @@ def max_reduce_equip_cols(df):
     #Drop cols with 80% or more missing values
     df = df.dropna(axis=1, thresh=threshold)
 
-    df = df[['RAILROAD','YEAR','MONTH','DAY','TIMEHR','TIMEMIN','AMPM','TYPE','STATE','TEMP','VISIBLTY','WEATHER',
+    df = df[['INCDTNO','RAILROAD','YEAR','MONTH','DAY','TIMEHR','TIMEMIN','AMPM','TYPE','STATE','TEMP','VISIBLTY','WEATHER',
             'TRNSPD','TRNDIR','TONS','TYPEQ','TYPTRK','HEADEND1','LOADF1','LOADP1','EMPTYF1',
             'EMPTYP1','EQPDMG','TRKDMG','CAUSE','CASKLDRR','CASINJRR','CASKLD','CASINJ','HIGHSPD','ACCDMG','ENGRS','CONDUCTR',
             'BRAKEMEN','REGION','TYPRR','RREMPKLD','RREMPINJ','PASSKLD','PASSINJ',
@@ -118,7 +118,7 @@ def general_equip_clean(df):
     '''
     This function takes in the equip df and prepares it for analysis by:
         - lowercasing all column titles
-        -
+        - convert lat and long to string dtypes
         -
 
     It returns a single dataframe
@@ -126,6 +126,10 @@ def general_equip_clean(df):
     '''
     #lowecase all column titles
     df.columns= df.columns.str.lower()
+
+    #Convert lat and long to strings
+    df.latitude = df.latitude.astype(str)
+    df.longitud = df.longitud.astype(str)
 
     return df
 
