@@ -215,6 +215,30 @@ def rename_columns(df):
     return df
 
 
+def drop_under_represented_rr(df): 
+    '''
+    This function takes in a railroad accident data frame
+    and drops any observations representing railroad companies
+    where the railroad company has less than 300 accidents in the dataframe
+    
+    It returns a single dataframe
+    '''
+    
+    #Define the value counts for railroad_company in the dataframe
+    value_counts = df['railroad_company'].value_counts()
+    
+    #Select the observations to remove based on railroad_company count representation threshold
+    to_remove = value_counts[value_counts < 300].index
+    
+    # Keep rows where the railroad_company column is not in to_remove if n was defined
+    if 300 > 0:
+        df = df[~df.railroad_company.isin(to_remove)]
+    else: 
+        df = df 
+        
+    return df
+
+
 def prep_equip_df(df):
     '''
     This function takes in the equipment rail data frame
@@ -238,5 +262,8 @@ def prep_equip_df(df):
 
     #rename columns
     df = rename_columns(df)
+
+    #Drop underrepresented railroad companies in dataframe
+    df = drop_under_represented_rr(df)
     
     return df
