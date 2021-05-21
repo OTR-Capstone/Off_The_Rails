@@ -33,7 +33,7 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 
 ### Data Dictionary
 
-\* Equipment Data
+### Equipment Data
 
 | Features            | Description                   | Data Type |
 |---------------------|-------------------------------|-----------|
@@ -41,7 +41,7 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 | accident_type       | type of accident              | int       |
 | state               | FIPS state code               | int       |
 | temp                | temp in degrees               | int       |
-| visibility          | daylight period               | int       |
+| visibility          | encoded visibility            | int       |
 | weather             | weather conditions            | int       |
 | train_speed         | speed of train in mph         | int       |
 | train_direction     | train direction               | float     |
@@ -68,7 +68,61 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 | lat                 | latitude                      | object    |
 | long                | longitude                     | object    |
 | signal_type         | type of signal                | int       |
-| date                | # passengers injured          | datetime  |
+| date                | date of incident              | datetime  |
+
+
+### Highway Data
+
+| Features            | Description                   | Data Type |
+|---------------------|-------------------------------|-----------|
+| railroad_company    | railroad code                 | object    |
+| station             | nearest timeable station      | object    |
+| county              | FIPS county code              | object    |
+| state               | FIPS state code               | int       |
+| region              | FRA designated region         | int       |
+| city                | FIPS city code                | object    |
+| vehicle_speed       | estimated vehicle speed       | float     |
+| vehicle_type        | encoded highway user          | object    |
+| vehicle_direction   | encoded user direction        | object    |
+| position            | encoded user direction        | object    |
+| accident_type       | circumstance of accident      | int       |
+| hazmat_entity       | entity transporting hazmat    | object    |
+| temp                | temperature in degrees        | int       |
+| visibility          | encoded visibility            | int       |
+| weather             | weather conditions            | object    |
+| train_type          | type of equipment             | object    |
+| track_type          | type of track                 | object    |
+| front_engines       | # of head end locomotives     | int       |
+| railcar_quality     | encoded quality of railcar    | int       |
+| train_speed         | estimated train speed         | float     |
+| train_direction     | direction of train            | object    |
+| warning_location    | location of warning           | object    |
+| warning_signal      | crossing w highway signal     | object    |
+| lights              | crossing illuminated          | object    |
+| standveh            | passed a standing vehicle     | object    |
+| other_train         | another train involved        | object    |
+| motorist_action     | action of highway user        | object    |
+| view_obstruction    | track view obstruction        | int       |
+| vehicle_damage      | vehicle damage in USD         | float     |
+| driver_fate         | fate of driver                | object    |
+| vehicle_occupied    | was the vehicle occupied      | object    |
+| total_killed        | total # of deaths             | int       |
+| total_injured       | total # of deaths             | int       |
+| vehicle_occupants   | # of vehicle occupants        | int       |
+| ispublic_crossing   | is this a public crossing   | object
+| fips                | FIPS code                     | int       |
+| whistle_ban         | whistle ban in effect         | object    |
+| driver_age          | age of driver                 | object    |
+| driver_gender       | gender of driver              | object    |
+| train_occupants     | # people on train             | int       |
+| user_killed         | # of drivers killed           | int       |
+| user_injured        | # of drivers injured          | int       |
+| rail_killed         | # of rr employess killed      | int       |
+| rail_injured        | # of rr employees injured     | int       |
+| train_pass_killed   | # train passengers killed     | int       |
+| train_pass_injured  | # train passengers injured    | int       |
+| road_conditions     | encoded road conditions       | object    |
+| date                | date of incident              | datetime  |
 
 
 \* - Indicates the target feature in this data
