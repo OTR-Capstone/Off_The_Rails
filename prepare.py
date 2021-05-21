@@ -463,4 +463,7 @@ def prep_hwy_df(df):
     #rename columns
     df = rename_hwy_columns(df)
     
+    #Drop underrepresented railroad companies in dataframe
+    df = drop_under_represented_rr(df)
+    
     return df
