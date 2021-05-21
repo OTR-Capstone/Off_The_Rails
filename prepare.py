@@ -96,9 +96,8 @@ def max_reduce_equip_cols(df):
 
     df = df[['INCDTNO','RAILROAD','YEAR','MONTH','DAY','TIMEHR','TIMEMIN','AMPM','TYPE','STATE','TEMP','VISIBLTY','WEATHER',
             'TRNSPD','TRNDIR','TONS','TYPEQ','TYPTRK','HEADEND1','LOADF1','LOADP1','EMPTYF1',
-            'EMPTYP1','EQPDMG','TRKDMG','CAUSE','CASKLDRR','CASINJRR','CASKLD','CASINJ','HIGHSPD','ACCDMG','ENGRS','CONDUCTR',
-            'BRAKEMEN','REGION','TYPRR','RREMPKLD','RREMPINJ','PASSKLD','PASSINJ',
-            'PASSTRN','Latitude','Longitud','SIGNAL']]
+            'EMPTYP1','EQPDMG','TRKDMG','CAUSE','CASKLD','CASINJ','HIGHSPD','ACCDMG','ENGRS','CONDUCTR',
+            'BRAKEMEN','REGION','TYPRR', 'Latitude','Longitud','SIGNAL']]
 
     return df
 
