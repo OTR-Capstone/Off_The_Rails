@@ -169,7 +169,55 @@ def set_equip_index(df):
 
     return df
 
-
+def rename_columns(df):
+    
+    '''
+    This function will rename the columns. Only run after max_reduce, concat_date_time, general_equip_clean,
+    and set_equip_index
+    
+    '''  
+    
+    #rename columns
+    
+    df.columns = ['railroad_company', 
+                   'accident_type', 
+                   'state', 
+                   'temp', 
+                   'visibility',
+                   'weather', 
+                   'train_speed', 
+                   'train_direction',
+                   'train_weight', 
+                   'train_type',
+                   'track_type', 
+                   'front_engines', 
+                   'loadfrght_cars',
+                   'loadpass_cars', 
+                   'emptyfrght_cars',
+                   'emptypass_cars', 
+                   'equip_damage',
+                   'track_damage', 
+                   'cause',
+                   'caskldrr',
+                   'casinjrr', 
+                   'total_killed', 
+                   'total_injured', 
+                   'max_speed', 
+                   'total_damage', 
+                   'engineers_onduty',
+                   'conductors_onduty', 
+                   'brakemen_onduty', 
+                   'region', 
+                   'typrr', 
+                   'rremp_killed',
+                   'rremp_injured',
+                   'passengers_killed',
+                   'passengers_injured',
+                   'passtrn', 
+                   'lat', 
+                   'long', 
+                   'signal_type',
+                   'date']
 
 
 def prep_equip_df(df):
@@ -193,5 +241,7 @@ def prep_equip_df(df):
     #set the index
     df = set_equip_index(df)
 
-
+    #rename columns
+    df = rename_columns(df)
+    
     return df
