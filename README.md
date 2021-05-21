@@ -35,7 +35,7 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 
 
 | Features    | Description                   | Data Type |
-|-------------|-------------------------      |-----------|
+|-------------|-------------------------------|-----------|
 | iyr         | year of incident              | int
 | imo         | month of incident             | int
 | railroad    | railroad code                 | object
@@ -61,28 +61,27 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 | cause       | cause of incidence            | object
 | caskldrr    | # killed                      | int 
 | casinjrr    | # injured                     | int
-| caskld      | ttl killed for all rr         | int
-| casinj      | ttl injured for all rr        | int
+| caskld      | total killed for all rr       | int
+| casinj      | total injured for all rr      | int
 | highspd     | maximum equipment speed       | int
 | accdmg      | total damage                  | int
 | stcnty      | FIPS state and county         | object
-| totinj      | int
-| totkld | int
-| engrs | float
-| firemen | float
-| conductr | float
-| brakemen | float
-| region | int
-| typrr | object
-| narrlen | int
-| rreempkld | int
-| rrempinj | int
-| passkld | int
-| passinj | int
-| otherkld | int
-| otherinj | int 
-| county | object
-| cntycd | float
+| totinj      | total injured                 | int
+| totkld      | total killed                  | int
+| engrs       | # of engineers on duty        | float
+| firemen     | # of firemen on duty          | float
+| conductr    | # of conductors on duty       | float
+| brakemen    | # of brakemen on duty         | float
+| region      | FRA designated region         | int
+| typrr       | type of railroad              | object
+| rreempkld   | # rr employees killed         | int
+| rrempinj    | # rr employees injured        | int
+| passkld     | # passengeres killed          | int
+| passinj     | # passengers injured          | int
+| otherkld    | # of others killed            | int
+| otherinj    | # of others injured           | int 
+| county      | county name                   | object
+| cntycd      | FIPS county code              | float
 
 
 
