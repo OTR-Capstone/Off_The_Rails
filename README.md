@@ -34,39 +34,39 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 ### Data Dictionary
 
 
-| Features    | Description             | Data Type |
-|-------------|-------------------------|-----------|
-| iyr         | year of incident        | 
-| imo         | month of incident       |
-| railroad    | 
-| state       | FIPS state code         |
-| temp        | temp in degrees         |
-| visibility  | daylight period         |
-| weather     | weather conditions      |
-| trnspd      | speed of thrain in mph  | int
-| typspd      | train speed type        | object
-| trnnbr      | train id number         | object
-| trndir      | train direction         | float
-| tons        | gross tonnage           | int
-| typeq       | type of equipment.      | object
-| trkname     | track identification    | object
-| typtrk      | Type of track.          | int
-| headend1    | # headend locomotives   | int
-| loadf1      | # loaded freight cars   | int 
-| loadp1      | # loaded passenger cars | int
-| emptyf1     | # empty freight cars    | int
-| emptyp1     | # empty passenger cars  | int 
-| eqpdmg      | equipment damage is USD | int 
-| trkdmg      | track damage in USD     | int 
-| cause       | cause of incidence      | object
-| caskldrr    | # killed                | int 
-| casinjrr    | # injured               | int
-| caskld | int
-| casinj | int
-| highspd | int
-| accdmg | int
-| stcnty | object
-| totinj | int
+| Features    | Description                   | Data Type |
+|-------------|-------------------------      |-----------|
+| iyr         | year of incident              | int
+| imo         | month of incident             | int
+| railroad    | railroad code                 | object
+| state       | FIPS state code               | int
+| temp        | temp in degrees               | int
+| visibility  | daylight period               | int
+| weather     | weather conditions            | int
+| trnspd      | speed of train in mph         | int
+| typspd      | train speed type              | object
+| trnnbr      | train id number               | object
+| trndir      | train direction               | float
+| tons        | gross tonnage                 | int
+| typeq       | type of equipment             | object
+| trkname     | track identification          | object
+| typtrk      | Type of track.                | int
+| headend1    | # headend locomotives         | int
+| loadf1      | # loaded freight cars         | int 
+| loadp1      | # loaded passenger cars       | int
+| emptyf1     | # empty freight cars          | int
+| emptyp1     | # empty passenger cars        | int 
+| eqpdmg      | equipment damage is USD       | int 
+| trkdmg      | track damage in USD           | int 
+| cause       | cause of incidence            | object
+| caskldrr    | # killed                      | int 
+| casinjrr    | # injured                     | int
+| caskld      | ttl killed for all rr         | int
+| casinj      | ttl injured for all rr        | int
+| highspd     | maximum equipment speed       | int
+| accdmg      | total damage                  | int
+| stcnty      | FIPS state and county         | object
+| totinj      | int
 | totkld | int
 | engrs | float
 | firemen | float
