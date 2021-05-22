@@ -70,7 +70,7 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 | long                | longitude                     | object    |
 | signal_type         | type of signal                | int       |
 | date                | date of incident              | datetime  |
-| season              | 
+| season              | season of year                | object    |
 
 ### Highway Data
 
@@ -124,7 +124,7 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 | train_pass_injured  | # train passengers injured    | int       |
 | road_conditions     | encoded road conditions       | object    |
 | date                | date of incident              | datetime  |
-
+| season              | season of year                | object    |
 
 ### FIPS State Codes
 
