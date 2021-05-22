@@ -239,6 +239,23 @@ def drop_under_represented_rr(df):
     return df
 
 
+#create seasons based on month in a date column
+
+def get_season(row):
+    
+    '''This function takes in the date column and returns a string containing a season name. A new 
+    season column can be created using this column.'''
+    
+    if row['date'].month >= 3 and row['date'].month <= 5:
+        return 'Spring'
+    elif row['date'].month >= 6 and row['date'].month <= 8:
+        return 'Summer'
+    elif row['date'].month >= 9 and row['date'].month <= 11:
+        return 'Fall'
+    else:
+        return 'Winter'
+
+
 def prep_equip_df(df):
     '''
     This function takes in the equipment rail data frame
@@ -265,6 +282,9 @@ def prep_equip_df(df):
 
     #Drop underrepresented railroad companies in dataframe
     df = drop_under_represented_rr(df)
+    
+    #Create season column
+    df['season'] = df.apply(get_season, axis=1)
     
     return df
 
@@ -465,5 +485,8 @@ def prep_hwy_df(df):
     
     #Drop underrepresented railroad companies in dataframe
     df = drop_under_represented_rr(df)
+    
+    #Create season column
+    df['season'] = df.apply(get_season, axis=1)
     
     return df
