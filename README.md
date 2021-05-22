@@ -94,7 +94,7 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 | train_type          | type of equipment             | object    |
 | track_type          | type of track                 | object    |
 | front_engines       | # of head end locomotives     | int       |
-| railcar_quality     | encoded quality of railcar    | int       |
+| railcar_quantity    | quantity of railcar           | int       |
 | train_speed         | estimated train speed         | float     |
 | train_direction     | direction of train            | object    |
 | warning_location    | location of warning           | object    |
