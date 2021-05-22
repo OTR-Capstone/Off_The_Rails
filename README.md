@@ -32,12 +32,13 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 ****
 
 ### Data Dictionary
+\* - Indicates the target feature in this data
 
 ### Equipment Data
 
 | Features            | Description                   | Data Type |
 |---------------------|-------------------------------|-----------|
-| railroad_company    | railroad code                 | object    |
+| railroad_company *  | railroad code                 | object    |
 | accident_type       | type of accident              | int       |
 | state               | FIPS state code               | int       |
 | temp                | temp in degrees               | int       |
@@ -75,7 +76,7 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 
 | Features            | Description                   | Data Type |
 |---------------------|-------------------------------|-----------|
-| railroad_company    | railroad code                 | object    |
+| railroad_company *  | railroad code                 | object    |
 | station             | nearest timeable station      | object    |
 | county              | FIPS county code              | object    |
 | state               | FIPS state code               | int       |
@@ -182,7 +183,7 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 | 56          | Wyoming                |
 
 
-\* - Indicates the target feature in this data
+
 ***
 
 
