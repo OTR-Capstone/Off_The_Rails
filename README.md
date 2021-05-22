@@ -70,7 +70,7 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 | long                | longitude                     | object    |
 | signal_type         | type of signal                | int       |
 | date                | date of incident              | datetime  |
-
+| season              | 
 
 ### Highway Data
 
