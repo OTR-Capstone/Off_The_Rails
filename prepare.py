@@ -285,6 +285,12 @@ def prep_equip_df(df):
     
     #Create season column
     df['season'] = df.apply(get_season, axis=1)
+
+    #Read fips_state_csv to df for state abbreviation
+    fips_df = pd.read_csv('fips_state_key.csv', usecols=[1,2])
+
+    #Mege state to df
+    df = df.merge(fips_df, how='inner', left_on='state', right_on='state')
     
     return df
 
@@ -488,5 +494,12 @@ def prep_hwy_df(df):
     
     #Create season column
     df['season'] = df.apply(get_season, axis=1)
+
+    #Read fips_state_csv to df for state abbreviation
+    fips_df = pd.read_csv('fips_state_key.csv', usecols=[1,2])
+
+    #Mege state to df
+    df = df.merge(fips_df, how='inner', left_on='state', right_on='state')
+
     
     return df
