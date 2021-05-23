@@ -291,6 +291,9 @@ def prep_equip_df(df):
 
     #Mege state to df
     df = df.merge(fips_df, how='inner', left_on='state', right_on='state')
+
+    #Rename state cols
+    df.rename(columns={'state': 'state_fips', ' stusps': 'state'}, inplace=True)
     
     return df
 
@@ -500,6 +503,9 @@ def prep_hwy_df(df):
 
     #Mege state to df
     df = df.merge(fips_df, how='inner', left_on='state', right_on='state')
+
+    #Rename state cols
+    df.rename(columns={'state': 'state_fips', ' stusps': 'state'}, inplace=True)
 
     
     return df
