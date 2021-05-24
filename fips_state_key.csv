@@ -1,52 +1,52 @@
-,state, stusps
-0,1, AL
-1,2, AK
-2,4, AZ
-3,5, AR
-4,6, CA
-5,8, CO
-6,9, CT
-7,10, DE
-8,11, DC
-9,12, FL
-10,13, GA
-11,15, HI
-12,16, ID
-13,17, IL
-14,18, IN
-15,19, IA
-16,20, KS
-17,21, KY
-18,22, LA
-19,23, ME
-20,24, MD
-21,25, MA
-22,26, MI
-23,27, MN
-24,28, MS
-25,29, MO
-26,30, MT
-27,31, NE
-28,32, NV
-29,33, NH
-30,34, NJ
-31,35, NM
-32,36, NY
-33,37, NC
-34,38, ND
-35,39, OH
-36,40, OK
-37,41, OR
-38,42, PA
-39,44, RI
-40,45, SC
-41,46, SD
-42,47, TN
-43,48, TX
-44,49, UT
-45,50, VT
-46,51, VA
-47,53, WA
-48,54, WV
-49,55, WI
-50,56, WY
+,state, stusps,state_region
+0,1, AL,east south central
+1,2, AK,pacific
+2,4, AZ,mountain
+3,5, AR,west south central
+4,6, CA,pacific
+5,8, CO,mountain
+6,9, CT,new england
+7,10, DE,south atlantic
+8,11, DC,south atlantic
+9,12, FL,south atlantic
+10,13, GA,south atlantic
+11,15, HI,pacific
+12,16, ID,mountain
+13,17, IL,east north central
+14,18, IN,east north central
+15,19, IA,west north central
+16,20, KS,west north central
+17,21, KY,east south central
+18,22, LA,west south central
+19,23, ME,new england
+20,24, MD,south atlantic
+21,25, MA,new england
+22,26, MI,east north central
+23,27, MN,west north central
+24,28, MS,east south central
+25,29, MO,west north central
+26,30, MT,mountain
+27,31, NE,west north central
+28,32, NV,mountain
+29,33, NH,new england
+30,34, NJ,mid atlantic
+31,35, NM,mountain
+32,36, NY,mid atlantic
+33,37, NC,south atlantic
+34,38, ND,west north central
+35,39, OH,east north central
+36,40, OK,west south central
+37,41, OR,pacific
+38,42, PA,mid atlantic
+39,44, RI,new england
+40,45, SC,south atlantic
+41,46, SD,west north central
+42,47, TN,east south central
+43,48, TX,west south central
+44,49, UT,mountain
+45,50, VT,new england
+46,51, VA,south atlantic
+47,53, WA,pacific
+48,54, WV,south atlantic
+49,55, WI,east north central
+50,56, WY,mountain
