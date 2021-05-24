@@ -34,7 +34,7 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 ### <a name="goals"></a> Project Goals:
 
 - Determine which features are drivers of highway rail accidents and equipment rail accidents.
-- Build a classification model for predicting which Railroad operator is most likely to be involved with a given accident. This information is used to enhance the overall analysis.
+- Build a classification model for predicting which railroad operator is most likely to be involved with a given accident. This information is used to enhance the overall analysis.
 
 
 [[Back to top](#top)]
