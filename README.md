@@ -243,19 +243,19 @@ Here is a snapshot of our project planning/setup on the evening of 5/23/21
 ### <a name="dspipe"></a> Data Science Pipeline:
 
 #### 1. Acquire
-- The data is acquired from csv files sourced from the US Department of Transportation.
-- Two datframes are created by concatenting the csv files for highway rail accidents and equipment rail accidents. 
+- The data is acquired from csv files sourced from the U.S. Department of Transportation.
+- Two dataframes are created by concatenating the csv files for highway rail accidents and equipment rail accidents. 
 
 #### 2. Prepare
 - Prepare the data for analysis with two prepare modules, one for each type of rail incident (highway  and equipment)
-- The prepare modules will return respective dataframes, split into train, validate and test. The train dataset will be ready for explorary analysis. 
+- The prepare modules will return respective dataframes, split into train, validate and test. The train dataset will be ready for exploratory analysis. 
 
 #### 3. Explore & Preprocessing
-- Exploration is reprodible and takeaways are well documented.
+- Exploration is reproducible and takeaways are well documented.
 - Preprocessing module prepares the dataframes for modeling.
 
 #### 4. Model/Evaluate
-- Develop a baseline model for predicting the railroad operator based on the type of indcident and incident features
+- Develop a baseline model for predicting the railroad operator based on the type of incident and incident features
 - Build classification models that improve upon the baseline accuracy with the understanding that model performance and evaluation metrics will better inform the overall analysis. 
 
 #### 5. Deliver
