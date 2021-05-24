@@ -29,16 +29,22 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 **Data Source:** U.S. Department of Transportation 
 ****
 
+
+
 ### <a name="goals"></a> Project Goals:
 
 - Determine which features are drivers of highway rail accidents and equipment rail accidents.
 - Build a classification model for predicting which Railroad operator is most likely to be involved with a given accident. This information is used to enhance the overall analysis.
 
+
+[[Back to top](#top)]
 **** 
 
 ### <a name="deliverables"></a> Deliverables:
 - Showcase highlighted findings in a presentation delivered to stakeholders. 
 - Create a reproducible jupyter notebook report that includes process, takeaways, and discoveries from every stage of the pipeline. 
+
+[[Back to top](#top)]
 **** 
 
 ### <a name="planning"></a> Project Planning:
@@ -53,6 +59,8 @@ Here is a snapshot of our project planning/setup on the evening of 5/23/21
 
 <img src="https://i.ibb.co/RpGfnfb/Screen-Shot-2021-05-23-at-19-23-15.png" alt="Reg-ppline" border="2">
 
+
+[[Back to top](#top)]
 ****
 
 ### <a name="hypo"></a> Initial Hypotheses:
@@ -63,6 +71,7 @@ Here is a snapshot of our project planning/setup on the evening of 5/23/21
 - There will be a difference in severity of accident based on whether the accident was a highway rail accident or an equipment accident.
 
 
+[[Back to top](#top)]
 ****
 
 ### <a name="dictionary"></a> Data Dictionary
@@ -105,6 +114,11 @@ Here is a snapshot of our project planning/setup on the evening of 5/23/21
 | signal_type         | type of signal                | int       |
 | date                | date of incident              | datetime  |
 | season              | season of year                | object    |
+
+
+[[Back to top](#top)]
+****
+
 
 ### <a name="hwydic"></a> Highway Data
 
@@ -159,6 +173,10 @@ Here is a snapshot of our project planning/setup on the evening of 5/23/21
 | road_conditions     | encoded road conditions       | object    |
 | date                | date of incident              | datetime  |
 | season              | season of year                | object    |
+
+
+[[Back to top](#top)]
+****
 
 ### <a name="fipsdic"></a> FIPS State Codes
 
@@ -217,6 +235,7 @@ Here is a snapshot of our project planning/setup on the evening of 5/23/21
 | 56          | Wyoming                |
 
 
+[[Back to top](#top)]
 
 ***
 
@@ -245,11 +264,17 @@ Here is a snapshot of our project planning/setup on the evening of 5/23/21
 - A reproducible notebook that is well-documented
 
 
+[[Back to top](#top)]
+****
+
 ### <a name="findings"></a> Conclusion:
 
 
 ### <a name="next"></a> Next Steps: 
 
+
+
+[[Back to top](#top)]
 
 ****
 
@@ -260,3 +285,8 @@ Here is a snapshot of our project planning/setup on the evening of 5/23/21
 2.  Download the following files to your working directory:  
 
 3.  Run our final Jupyter Notebook to reproduce our findings and analysis. 
+
+
+[[Back to top](#top)]
+
+****
