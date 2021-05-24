@@ -8,10 +8,10 @@
 [[Project Summary](#project_summary)]
 [[Project Goals](#goals)]
 [[Deliverables](#deliverables)]
+[[Project Planning](#planning)]
 [[Initial Hypothesis](#hypo)]
-[[Data Dictionary](#dictionary)]
-[[Equipment Data](#equipdic)]
-[[Highway Data](#hwydic)]
+[[Equipment Rail Data Dictionary](#equipdic)]
+[[Highway Rail Data Dictionary](#hwydic)]
 [[FIPS State Codes](#fipsdic)]
 [[DS Pipeline](#dspipe)]
 [[Conclusion](#findings)]
@@ -40,6 +40,20 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 - Showcase highlighted findings in a presentation delivered to stakeholders. 
 - Create a reproducible jupyter notebook report that includes process, takeaways, and discoveries from every stage of the pipeline. 
 **** 
+
+### <a name="planning"></a> Project Planning:
+
+All of our project planning can be found on Trello. Below is a link to our progress along with a visual snapshot.
+
+
+A link to the Trello board below can be found at https://trello.com/b/msJXyeEv/off-the-rails
+
+
+Here is a snapshot of our project planning/setup on the evening of 5/23/21
+
+<img src="https://i.ibb.co/RpGfnfb/Screen-Shot-2021-05-23-at-19-23-15.png" alt="Reg-ppline" border="2">
+
+****
 
 ### <a name="hypo"></a> Initial Hypotheses:
 
