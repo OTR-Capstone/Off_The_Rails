@@ -5,29 +5,43 @@
 
 ****
 
+[[Project Summary](#project_summary)]
+[[Project Goals](#goals)]
+[[Deliverables](#deliverables)]
+[[Initial Hypothesis](#hypo)]
+[[Data Dictionary](#dictionary)]
+[[Equipment Data](#equipdic)]
+[[Highway Data](#hwydic)]
+[[FIPS State Codes](#fipsdic)]
+[[DS Pipeline](#dspipe)]
+[[Conclusion](#findings)]
+[[Next Steps](#next)]
+[[Reproduce This Project](#reproduce)]
+​
+​
 
 
 
-### Project Summary:
+### <a name="project_summary"></a>Project Summary:
 Our team accessed the U.S. Department of Transportation’s database to analyze 8 years of rail accidents across the United States. We utilized the full data science pipeline to analyze the data and create a classification model that would predict which company would be involved in a rail accident.
 
 
 **Data Source:** U.S. Department of Transportation 
 ****
 
-### Project Goals:
+### <a name="goals"></a> Project Goals:
 
 - Determine which features are drivers of highway rail accidents and equipment rail accidents.
 - Build a classification model for predicting which Railroad operator is most likely to be involved with a given accident. This information is used to enhance the overall analysis.
 
 **** 
 
-### Deliverables:
+### <a name="deliverables"></a> Deliverables:
 - Showcase highlighted findings in a presentation delivered to stakeholders. 
 - Create a reproducible jupyter notebook report that includes process, takeaways, and discoveries from every stage of the pipeline. 
 **** 
 
-### Initial Hypotheses:
+### <a name="hypo"></a> Initial Hypotheses:
 
 - For each type of rail incidents, Railroad Operator plays into the frequency of incidents and the severity of incidents. 
 - Geography and location has an impact on the type of rail incident.
@@ -37,10 +51,10 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 
 ****
 
-### Data Dictionary
+### <a name="dictionary"></a> Data Dictionary
 \* - Indicates the target feature in this data
 
-### Equipment Data
+### <a name="equipdic"></a> Equipment Data
 
 | Features            | Description                   | Data Type |
 |---------------------|-------------------------------|-----------|
@@ -78,7 +92,7 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 | date                | date of incident              | datetime  |
 | season              | season of year                | object    |
 
-### Highway Data
+### <a name="hwydic"></a> Highway Data
 
 | Features            | Description                   | Data Type |
 |---------------------|-------------------------------|-----------|
@@ -132,7 +146,7 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 | date                | date of incident              | datetime  |
 | season              | season of year                | object    |
 
-### FIPS State Codes
+### <a name="fipsdic"></a> FIPS State Codes
 
 | FIPS Code   | Corresponding State                 
 |-------------|------------------------|
@@ -193,7 +207,7 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 ***
 
 
-### Data Science Pipeline:
+### <a name="dspipe"></a> Data Science Pipeline:
 
 #### 1. Acquire
 - The data is acquired from csv files sourced from the US Department of Transportation.
@@ -217,15 +231,15 @@ Our team accessed the U.S. Department of Transportation’s database to analyze 
 - A reproducible notebook that is well-documented
 
 
-### Conclusion:
+### <a name="findings"></a> Conclusion:
 
 
-### Next Steps: 
+### <a name="next"></a> Next Steps: 
 
 
 ****
 
-### Instructions for Reproducing Project:  
+### <a name="reproduce"></a> Instructions for Reproducing Project:  
 
 1.  Read and follow this README.md. 
 
