@@ -124,3 +124,18 @@ def min_max_scale(X_train, X_validate, X_test, numeric_cols):
 
     
     return X_train_scaled, X_validate_scaled, X_test_scaled
+
+
+def get_dummies(df):
+    '''
+    This function will create dummy variables out of the original 'season' column 
+    and return a dataframe with all of the original columns minus 'season'. 
+    New columns added will be 'Winter', 'Spring', 'Fall', and 'Summer' which are boolean. 
+    '''
+    # create dummy vars of season
+    dummy_df = pd.get_dummies(df.season)
+    # concatenate the dataframe with the 4 seasons columns to the original dataframe
+    df_dummies = pd.concat([df, dummy_df], axis = 1)
+    # drop season column
+    df_dummies = df_dummies.drop(columns = ['season'])
+    return df_dummies
