@@ -295,6 +295,9 @@ def prep_equip_df(df):
     #Rename state cols
     df.rename(columns={'state': 'state_fips', ' stusps': 'state'}, inplace=True)
     
+    #Create year column
+    df['year'] = df['date'].dt.year
+    
     return df
 
 ############################################################################################################################
@@ -507,5 +510,7 @@ def prep_hwy_df(df):
     #Rename state cols
     df.rename(columns={'state': 'state_fips', ' stusps': 'state'}, inplace=True)
 
+    #Create year column
+    df['year'] = df['date'].dt.year
     
     return df
