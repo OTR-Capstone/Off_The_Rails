@@ -4,6 +4,15 @@ import pandas as pd
 import numpy as np
 import os
 import sys
+import json
+from typing import Dict, List, Optional, Union, cast
+import requests
+from sklearn.feature_extraction.text import TfidfVectorizer
+import nltk
+import unicodedata
+import re
+
+from acquire import get_hwyrail, get_equiprail
 
 
 # Miscellaneous Prep Functions~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -512,5 +521,52 @@ def prep_hwy_df(df):
 
     #Create year column
     df['year'] = df['date'].dt.year
+    
+    return df
+
+
+
+############################################################################################################################
+
+''''''''''''''''''''
+'                  '
+'   NLP Prep       '
+'    Function      '
+''''''''''''''''''''
+
+
+def equip_nlp():
+    
+    ''' This function takes in a dataframe and returns a df that is ready for NLP exploration'''
+    
+    
+    df = get_equiprail()
+    
+    counts = df['RAILROAD'].value_counts()
+
+    newdf = df[~df['RAILROAD'].isin(counts[counts < 400].index)]
+    
+    #create dataframe of just railroad and narratives
+    df = newdf[['RAILROAD','NARR1','NARR2','NARR3','NARR4','NARR5', 'NARR6','NARR7','NARR8','NARR9','NARR10',
+               'NARR11','NARR12','NARR13','NARR14','NARR15']]
+    
+    #replace NaN with empty string spaces
+
+    df = df.replace(np.nan, '', regex=True)
+    
+    #merge all narrative columns into 1 single column
+
+    df["narrative"] = df["NARR1"] + df["NARR2"] + df["NARR3"] + df["NARR4"] + df["NARR5"] + df["NARR6"] + df["NARR7"] +           df["NARR8"] + df["NARR9"] + df["NARR10"] + df["NARR11"] + df["NARR12"] + df["NARR13"] + df["NARR14"] + df["NARR15"]
+    
+    #drop unneeded narrative columns as they have already been merged
+
+    df = df.drop(['NARR1', 'NARR2', 'NARR3', 'NARR4', 'NARR5', 'NARR6','NARR7','NARR8','NARR9','NARR10',
+               'NARR11','NARR12','NARR13','NARR14','NARR15'], axis=1)
+    
+    #find narratives with nulls
+    null_narrative = df[df['narrative'].isnull()].index
+    
+    #drop any null narratives
+    df.drop(null_narrative , inplace=True)
     
     return df
