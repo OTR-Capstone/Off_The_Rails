@@ -299,7 +299,7 @@ def prep_equip_df(df):
     fips_df = pd.read_csv('fips_state_key.csv', usecols=[1,2])
 
     #Mege state to df
-    df = df.merge(fips_df, how='inner', left_on='state', right_on='state')
+    df = df.merge(fips_df, how='inner', left_on='state', right_on='state', right_index=True)
 
     #Rename state cols
     df.rename(columns={'state': 'state_fips', ' stusps': 'state'}, inplace=True)
@@ -514,7 +514,7 @@ def prep_hwy_df(df):
     fips_df = pd.read_csv('fips_state_key.csv', usecols=[1,2])
 
     #Mege state to df
-    df = df.merge(fips_df, how='inner', left_on='state', right_on='state')
+    df = df.merge(fips_df, how='inner', left_on='state', right_on='state', right_index=True)
 
     #Rename state cols
     df.rename(columns={'state': 'state_fips', ' stusps': 'state'}, inplace=True)
