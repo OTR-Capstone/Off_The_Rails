@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 import os
 import sys
-
 import json
 from typing import Dict, List, Optional, Union, cast
 import requests
@@ -12,6 +11,7 @@ import unicodedata
 import re
 
 from acquire import get_hwyrail, get_equiprail
+
 
 # Miscellaneous Prep Functions~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -297,7 +297,7 @@ def prep_equip_df(df):
     fips_df = pd.read_csv('fips_state_key.csv', usecols=[1,2])
 
     #Mege state to df
-    df = df.merge(fips_df, how='inner', left_on='state', right_on='state')
+    df = df.merge(fips_df, how='inner', left_on='state', right_on='state', right_index=True)
 
     #Rename state cols
     df.rename(columns={'state': 'state_fips', ' stusps': 'state'}, inplace=True)
@@ -487,6 +487,7 @@ def prep_hwy_df(df):
     It returns a single dataframe
     '''
 
+        
     #Reduce columns
     df = max_reduce_hwy_cols(df)
 
@@ -507,12 +508,12 @@ def prep_hwy_df(df):
     
     #Create season column
     df['season'] = df.apply(get_season, axis=1)
-
+    
     #Read fips_state_csv to df for state abbreviation
-    fips_df = pd.read_csv('fips_state_key.csv', usecols=[1,2,3])
+    fips_df = pd.read_csv('fips_state_key.csv', usecols=[1,2])
 
     #Mege state to df
-    df = df.merge(fips_df, how='inner', left_on='state', right_on='state')
+    df = df.merge(fips_df, how='inner', left_on='state', right_on='state', right_index=True)
 
     #Rename state cols
     df.rename(columns={'state': 'state_fips', ' stusps': 'state'}, inplace=True)
@@ -520,7 +521,23 @@ def prep_hwy_df(df):
     #Create year column
     df['year'] = df['date'].dt.year
     
+    #Fix left aligned numbers
+    df['lights'] = df['lights'].apply(int)
+    df['weather'] = df['weather'].apply(int)
+    
+    hazindex = df.loc[df['hazmat_entity'].isin([' '])].index
+    df.drop(hazindex, inplace=True)
+    df['hazmat_entity'] = df['hazmat_entity'].apply(int)
+    
+    # fix driver gender
+    df['driver_gender'] = df.driver_gender.replace(' ', 1)
+    df['driver_gender'] = df['driver_gender'].apply(int)
+    gendindex = df.loc[df['driver_gender'].isin(['u'])].index
+    df.drop(gendindex, inplace=True)
+    
+    
     return df
+
 
 
 ############################################################################################################################
