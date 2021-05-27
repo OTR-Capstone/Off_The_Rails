@@ -331,7 +331,7 @@ def min_reduce_hwy_cols(df):
     #Drop cols with 80% or more missing values
     df = df.dropna(axis=1, thresh=threshold)
 
-    df = df[['RAILROAD','INCDTNO','YEAR','MONTH','DAY','TIMEHR','TIMEMIN','AMPM','STATION','COUNTY','STATE','REGION','CITY',
+    df = df[['RAILROAD','INCDTNO','GXID','YEAR','MONTH','DAY','TIMEHR','TIMEMIN','AMPM','STATION','COUNTY','STATE','REGION','CITY',
  'VEHSPD','TYPVEH','VEHDIR','POSITION','TYPACC','HAZARD','TEMP','VISIBLTY','WEATHER','TYPEQ','TYPTRK','NBRLOCOS','NBRCARS',
  'TRNSPD','TRNDIR','LOCWARN','WARNSIG','LIGHTS','STANDVEH','TRAIN2','MOTORIST','VIEW','VEHDMG','DRIVER','INVEH','TOTKLD',
  'TOTINJ','TOTOCC','PUBLIC','CNTYCD','WHISBAN','DRIVAGE','DRIVGEN',
@@ -355,7 +355,7 @@ def max_reduce_hwy_cols(df):
     #Drop cols with 80% or more missing values
     df = df.dropna(axis=1, thresh=threshold)
 
-    df = df[['RAILROAD','INCDTNO','YEAR','MONTH','DAY','TIMEHR','TIMEMIN','AMPM','STATION','COUNTY','STATE','REGION','CITY',
+    df = df[['RAILROAD','INCDTNO', 'GXID','YEAR','MONTH','DAY','TIMEHR','TIMEMIN','AMPM','STATION','COUNTY','STATE','REGION','CITY',
  'VEHSPD','TYPVEH','VEHDIR','POSITION','TYPACC','HAZARD','TEMP','VISIBLTY','WEATHER','TYPEQ','TYPTRK','NBRLOCOS','NBRCARS',
  'TRNSPD','TRNDIR','LOCWARN','WARNSIG','LIGHTS','STANDVEH','TRAIN2','MOTORIST','VIEW','VEHDMG','DRIVER','INVEH','TOTKLD',
  'TOTINJ','TOTOCC','PUBLIC','CNTYCD','WHISBAN','DRIVAGE','DRIVGEN',
@@ -428,6 +428,7 @@ def rename_hwy_columns(df):
     #rename columns
     
     df.columns = ['railroad_company',
+                  'crossing_id',
                   'station',
                   'county',
                   'state',
@@ -478,6 +479,9 @@ def rename_hwy_columns(df):
     
     return df
 
+
+
+
 def prep_hwy_df(df):
     '''
     This function takes in the equipment rail data frame
@@ -524,16 +528,30 @@ def prep_hwy_df(df):
     #Fix left aligned numbers
     df['lights'] = df['lights'].apply(int)
     df['weather'] = df['weather'].apply(int)
+    df['motorist_action'] = df['motorist_action'].apply(int)
+   
+
+    #address driver age
+    df['driver_age'] = df.driver_age.replace('  ', 40)
+    df['driver_age'] = df['driver_age'].apply(int)
     
+    
+    # fix hazmat
     hazindex = df.loc[df['hazmat_entity'].isin([' '])].index
     df.drop(hazindex, inplace=True)
     df['hazmat_entity'] = df['hazmat_entity'].apply(int)
     
     # fix driver gender
     df['driver_gender'] = df.driver_gender.replace(' ', 1)
-    df['driver_gender'] = df['driver_gender'].apply(int)
     gendindex = df.loc[df['driver_gender'].isin(['u'])].index
     df.drop(gendindex, inplace=True)
+    df['driver_gender'] = df['driver_gender'].apply(int)
+    
+    # address driver fate
+    fateindex = df.loc[df['driver_fate'].isin([' '])].index
+    df.drop(fateindex, inplace=True)
+    df['driver_fate'] = df['driver_fate'].apply(int)
+    
     
     
     return df
