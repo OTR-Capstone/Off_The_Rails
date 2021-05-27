@@ -1,5 +1,4 @@
 
-
 import pandas as pd
 import numpy as np
 import os
@@ -480,6 +479,9 @@ def rename_hwy_columns(df):
     
     return df
 
+
+
+
 def prep_hwy_df(df):
     '''
     This function takes in the equipment rail data frame
@@ -489,6 +491,7 @@ def prep_hwy_df(df):
     It returns a single dataframe
     '''
 
+        
     #Reduce columns
     df = max_reduce_hwy_cols(df)
 
@@ -509,7 +512,7 @@ def prep_hwy_df(df):
     
     #Create season column
     df['season'] = df.apply(get_season, axis=1)
-
+    
     #Read fips_state_csv to df for state abbreviation
     fips_df = pd.read_csv('fips_state_key.csv', usecols=[1,2])
 
@@ -521,6 +524,25 @@ def prep_hwy_df(df):
 
     #Create year column
     df['year'] = df['date'].dt.year
+    
+    #Fix left aligned numbers
+    df['lights'] = df['lights'].apply(int)
+    df['weather'] = df['weather'].apply(int)
+    
+    hazindex = df.loc[df['hazmat_entity'].isin([' '])].index
+    df.drop(hazindex, inplace=True)
+    df['hazmat_entity'] = df['hazmat_entity'].apply(int)
+    
+    # fix driver gender
+    df['driver_gender'] = df.driver_gender.replace(' ', 1)
+    gendindex = df.loc[df['driver_gender'].isin(['u'])].index
+    df.drop(gendindex, inplace=True)
+    df['driver_gender'] = df['driver_gender'].apply(int)
+    
+    # address driver fate
+    fateindex = df.loc[df['driver_fate'].isin([' '])].index
+    df.drop(fateindex, inplace=True)
+    df['driver_fate'] = df['driver_fate'].apply(int)
     
     return df
 
