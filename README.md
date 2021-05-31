@@ -243,16 +243,21 @@ Here is a snapshot of our project planning/setup on the evening of 5/23/21
 ### <a name="dspipe"></a> Data Science Pipeline:
 
 #### 1. Acquire
-- The data is acquired from csv files sourced from the U.S. Department of Transportation.
+- The data is acquired from csv files sourced from the US Department of Transportation.
 - Two dataframes are created by concatenating the csv files for highway rail accidents and equipment rail accidents. 
+- All functions to prepare the data are included in [acquire.py](https://github.com/OTR-Capstone/Off_The_Rails/blob/main/acquire.py). 
 
 #### 2. Prepare
-- Prepare the data for analysis with two prepare modules, one for each type of rail incident (highway  and equipment)
-- The prepare modules will return respective dataframes, split into train, validate and test. The train dataset will be ready for exploratory analysis. 
+- Prepare the data for analysis with [prepare.py](https://github.com/OTR-Capstone/Off_The_Rails/blob/main/prepare.py) module with functions for each type of rail accident (highway  and equipment)
+- The prepare module will return respective dataframes, split into train, validate and test. The train dataset will be ready for exploratory analysis. 
+
 
 #### 3. Explore & Preprocessing
-- Exploration is reproducible and takeaways are well documented.
-- Preprocessing module prepares the dataframes for modeling.
+- Run univariate, bivariate, and multivariate visulaizations for how features interact with each other and the target, railroad_company
+- Run statistical tests to help answer questions that arose from exploration
+- All functions to explore the data are included in [explore.py](https://github.com/OTR-Capstone/Off_The_Rails/blob/main/explore.py). 
+- Preprocessing module prepares the dataframes for modeling. All functions for preprocessing are included in [preprocessing.py](https://github.com/OTR-Capstone/Off_The_Rails/blob/main/preprocessing.py).
+
 
 #### 4. Model/Evaluate
 - Develop a baseline model for predicting the railroad operator based on the type of incident and incident features
@@ -283,8 +288,12 @@ Here is a snapshot of our project planning/setup on the evening of 5/23/21
 1.  Read and follow this README.md. 
 
 2.  Download the following files to your working directory:  
+- [acquire.py](https://github.com/OTR-Capstone/Off_The_Rails/blob/main/acquire.py)
+- [prepare.py](https://github.com/OTR-Capstone/Off_The_Rails/blob/main/prepare.py)
+- [explore.py](https://github.com/OTR-Capstone/Off_The_Rails/blob/main/explore.py)
+- [preprocessing.py](https://github.com/OTR-Capstone/Off_The_Rails/blob/main/preprocessing.py)
 
-3.  Run our final Jupyter Notebook to reproduce our findings and analysis. 
+3.  Run our final Jupyter Notebook [(final_report_and_findings.ipynb)](https://github.com/OTR-Capstone/Off_The_Rails/blob/main/final_report_and_findings.ipynb) to reproduce our findings and analysis. 
 
 
 [[Back to top](#top)]
