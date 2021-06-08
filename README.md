@@ -273,9 +273,13 @@ Here is a snapshot of our project planning/setup on the evening of 5/23/21
 ****
 
 ### <a name="findings"></a> Conclusion:
+- US Railroads seem to be operating in a consistent manner with regards to Equipment Rail Accidents.
+- Characteristics of the highway  driver  and  location, rather than the Railroad, appear to account for the variance in outcomes of highway rail accidents.
 
 
 ### <a name="next"></a> Next Steps: 
+- Industry and local governments should further investigate the drivers for highway rail accidents, especially in locations with recurring incidents.
+
 
 
 
